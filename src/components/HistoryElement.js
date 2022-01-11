@@ -8,12 +8,7 @@ const HistoryElement = ({ income, text, amount, index }) => {
 
   return (
     <div>
-      <li
-        className={`history-el ${income ? "gain" : "spend"}`}
-        onClick={() => {
-          deleteHistoryElement(index);
-        }}
-      >
+      <li className={`history-el ${income ? "gain" : "spend"}`}>
         <p>{text}</p>
         <p>{amount > 0 ? `+${amount}$` : `${amount}$`}</p>
         <div
@@ -27,7 +22,11 @@ const HistoryElement = ({ income, text, amount, index }) => {
             setIsShown(false);
           }}
         >
-          <FiDelete />
+          <FiDelete
+            onClick={() => {
+              deleteHistoryElement(index);
+            }}
+          />
         </div>
       </li>
       {isShown ? <p className="del-el">click to delete this element</p> : <></>}
