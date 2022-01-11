@@ -51,9 +51,15 @@ ul li {
 
 .main-container {
   font-family: "Roboto", sans-serif;
-  width: 80%;
+  width: 95%;
   max-width: 600px;
   margin: 5rem auto;
+}
+
+@media (min-width: 425px) {
+  .main-container {
+    width: 80%;
+  }
 }
 
 .main-container > section {
